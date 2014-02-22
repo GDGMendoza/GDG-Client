@@ -46,9 +46,6 @@ header, header .row, footer, footer .row{
     margin-right: 0 !important;
 }
 a{
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
     text-decoration: none !important
 }
 p{
@@ -89,18 +86,27 @@ p{
     font-weight: bold;
     color: #4D4D4D;
     padding-bottom: 5px;
-    -webkit-border-image:   url('/images/horizontal-line.jpg')0 0 100% 0;
-    -moz-border-image:      url('/images/horizontal-line.jpg')0 0 100% 0;
-    border-image:           url('/images/horizontal-line.jpg')0 0 100% 0;
+    -webkit-border-image:   url('../images/horizontal-line.jpg')0 0 100% 0;
+    -moz-border-image:      url('../images/horizontal-line.jpg')0 0 100% 0;
+    border-image:           url('../images/horizontal-line.jpg')0 0 100% 0;
 }
 .leyend-margin-30{
     margin-top: 30px;
 }
 .separator{
     padding-bottom: 15px;
-    -webkit-border-image:   url('/images/horizontal-line.jpg')0 0 100% 0;
-    -moz-border-image:      url('/images/horizontal-line.jpg')0 0 100% 0;
-    border-image:           url('/images/horizontal-line.jpg')0 0 100% 0;
+    -webkit-border-image:   url('../images/horizontal-line.jpg')0 0 100% 0;
+    -moz-border-image:      url('../images/horizontal-line.jpg')0 0 100% 0;
+    border-image:           url('../images/horizontal-line.jpg')0 0 100% 0;
+}
+.separator-color{
+
+    padding-bottom: 15px;
+    height: 5px;
+    width: 100%;
+    -webkit-border-image:   url('../images/line-down.jpg')0 0 100% 0;
+    -moz-border-image:      url('../images/line-down.jpg')0 0 100% 0;
+    border-image:           url('../images/line-down.jpg')0 0 100% 0;
 }
 .pagination-centered{
     text-align: center;
@@ -207,9 +213,9 @@ p{
         text-align: inherit !important;
     }
     .big-post-container{
-        -webkit-border-image:   url('/images/vertical-line.jpg')0 0 0 100% repeat !important;
-        -moz-border-image:      url('/images/vertical-line.jpg')0 0 0 100% repeat !important;
-        border-image:           url('/images/vertical-line.jpg')0 0 0 100% repeat !important;
+        -webkit-border-image:   url('../images/vertical-line.jpg')0 0 0 100% repeat !important;
+        -moz-border-image:      url('../images/vertical-line.jpg')0 0 0 100% repeat !important;
+        border-image:           url('../images/vertical-line.jpg')0 0 0 100% repeat !important;
     }
     .tag-container{
         margin: 20px 40px !important;
@@ -274,9 +280,9 @@ nav a:focus {
     background: rgba(66,133,244,0.8);
     content: '';
     opacity: 0;
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-    -moz-transition:    opacity 0.3s, -moz-transform 0.3s;
-    transition:         opacity 0.3s, transform 0.3s;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s !important;
+    -moz-transition:    opacity 0.3s, -moz-transform 0.3s !important;
+    transition:         opacity 0.3s, transform 0.3s !important;
     -webkit-transform:  translateY(10px);
     -moz-transform:     translateY(10px);
     transform:          translateY(10px);
@@ -289,6 +295,7 @@ nav a:focus {
     -moz-transform:     translateY(0px);
     transform:          translateY(0px);
 }
+
 .navbar-toggle {
     position: relative;
     float: right;
@@ -388,9 +395,9 @@ nav a:focus {
     font-weight: bold;
 }
 .tiny-post-container{
-    -webkit-border-image:   url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    -moz-border-image:      url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    border-image:           url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    -webkit-border-image:   url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    -moz-border-image:      url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    border-image:           url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
     margin: 20px 0 20px 0;
     padding: 15px 0 15px 20px;
     background: #F2F2F2;
@@ -404,9 +411,9 @@ nav a:focus {
 }
 .tag-container, .tag-container-tiny{
     margin: 20px 0 0 0;
-    -webkit-border-image:   url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    -moz-border-image:      url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    border-image:           url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    -webkit-border-image:   url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    -moz-border-image:      url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    border-image:           url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
 }
 .tag-preview{
     margin: 2px 3px;
@@ -418,9 +425,9 @@ nav a:focus {
 }
 .big-post-foot{
     min-height: 150px;
-    -webkit-border-image:   url('/images/horizontal-line.jpg') 0 0  100% 0 repeat !important;
-    -moz-border-image:      url('/images/horizontal-line.jpg') 0 0 100% 0 repeat !important;
-    border-image:           url('/images/horizontal-line.jpg') 0 0 100% 0 repeat !important;
+    -webkit-border-image:   url('../images/horizontal-line.jpg') 0 0  100% 0 repeat !important;
+    -moz-border-image:      url('../images/horizontal-line.jpg') 0 0 100% 0 repeat !important;
+    border-image:           url('../images/horizontal-line.jpg') 0 0 100% 0 repeat !important;
 }
 .tiny-post-author{
     margin: 15px 0 0 0;
@@ -467,20 +474,17 @@ form .tiny-post-container {
 
 /*********** START WHO WE ARE ************/
 .wwa-background{
-    background: url('/images/world-map.png') no-repeat;
+    background: url('../images/world-map.png') no-repeat;
     height: 573px;
     width: 100%;
-    -webkit-border-image:   url('/images/line-down.jpg')0 0 5 0 repeat;
-    -moz-border-image:      url('/images/line-down.jpg')0 0 5 0 repeat;
-    border-image:           url('/images/line-down.jpg')0 0 5 0 repeat;
 }
 .wwa-contributor-container{
     margin: 10px;
     padding: 10px 0 5px 20px;
     background-color: #F2F2F2;
-    -webkit-border-image:   url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    -moz-border-image:      url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    border-image:           url('/images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    -webkit-border-image:   url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    -moz-border-image:      url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    border-image:           url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
 }
 .wwa-contributor-image{
     height: 80px;
@@ -496,9 +500,9 @@ form .tiny-post-container {
     margin: 10px 0 0 0;
     min-height: 80px;
     padding: 0 0 0 5px;
-    -webkit-border-image:   url('/images/vertical-line.jpg')0 0 0 100% repeat;
-    -moz-border-image:      url('/images/vertical-line.jpg')0 0 0 100% repeat;
-    border-image:           url('/images/vertical-line.jpg')0 0 0 100% repeat;
+    -webkit-border-image:   url('../images/vertical-line.jpg')0 0 0 100% repeat;
+    -moz-border-image:      url('../images/vertical-line.jpg')0 0 0 100% repeat;
+    border-image:           url('../images/vertical-line.jpg')0 0 0 100% repeat;
 }
 /*********** END WHO WE ARE ************/
 
@@ -514,9 +518,9 @@ footer{
     /* Height must match #body padding-bottom propery */
     height: 225px;
     background: #F2F2F2;
-    -webkit-border-image:   url('/images/line-down.jpg')0 0 5 0 repeat;
-    -moz-border-image:      url('/images/line-down.jpg')0 0 5 0 repeat;
-    border-image:           url('/images/line-down.jpg')0 0 5 0 repeat;
+    -webkit-border-image:   url('../images/line-down.jpg')0 0 5 0 repeat;
+    -moz-border-image:      url('../images/line-down.jpg')0 0 5 0 repeat;
+    border-image:           url('../images/line-down.jpg')0 0 5 0 repeat;
 }
 .footer-logo{
     margin-top: 5px;
@@ -524,9 +528,9 @@ footer{
 .footer-list{
     margin-top: 15px;
     color: #CCCCCC;
-    -webkit-border-image:   url('/images/vertical-line.jpg')0 0 0 90 repeat;
-    -moz-border-image:      url('/images/vertical-line.jpg')0 0 0 90 repeat;
-    border-image:           url('/images/vertical-line.jpg')0 0 0 90 repeat;
+    -webkit-border-image:   url('../images/vertical-line.jpg')0 0 0 90 repeat;
+    -moz-border-image:      url('../images/vertical-line.jpg')0 0 0 90 repeat;
+    border-image:           url('../images/vertical-line.jpg')0 0 0 90 repeat;
 }
 .footer-center{
     margin-left: 20%;
