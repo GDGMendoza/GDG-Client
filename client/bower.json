@@ -1,15 +1,21 @@
 {
-  "name": "gdgsite",
-  "version": "0.0.0",
-  "dependencies": {
-    "angular": "1.2.6",
-    "json3": "~3.2.6",
-    "es5-shim": "~2.1.0",
-    "angular-sanitize": "1.2.6",
-    "angular-route": "1.2.6"
-  },
-  "devDependencies": {
-    "angular-mocks": "1.2.6",
-    "angular-scenario": "1.2.6"
-  }
+    "name": "gdgsite",
+    "version": "0.0.0",
+    "dependencies": {
+        "angular": "~1.2.*-build",
+        "json3": "~3.2.4",
+        "es5-shim": "~2.1.0",
+        "angular-sanitize": "~1.2.*",
+        "angular-route": "~1.2.*",
+        "angular-animate": "~1.2.*",
+        "ngAnimate-animate.css": "~0.1.1",
+        "bootstrap": "latest"
+    },
+    "devDependencies": {
+        "angular-mocks": "~1.2.*",
+        "angular-scenario": "~1.2.*"
+    },
+    "resolutions": {
+        "angular": "~1.2.*-build"
+    }
 }
