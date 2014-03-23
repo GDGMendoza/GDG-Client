@@ -10,6 +10,11 @@ module.exports = {
 	attributes: {
         email: {
             type: 'string',
+            required: true,
+            uuid: true
+        },
+        password: {
+            type: 'string',
             required: true
         },
         name: {
@@ -38,6 +43,11 @@ module.exports = {
         photo: {
             type: 'string',
             required: true
+        },
+        toJSON: function(){
+            var contributor = this.toObject();
+            delete contributor.password;
+            return contributor;
         }
 	}
 

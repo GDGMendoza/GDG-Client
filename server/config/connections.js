@@ -32,7 +32,8 @@ module.exports.connections = {
     port      : 27017,
     user      : 'gdgmendoza',
     password  : 'peperulo123',
-    database  : 'gdg-db'
+    database  : 'gdg-db',
+    schema    : true //FUERZA QUE SE CUMPLAN LOS ESQUEMAS ESTABLECIDOS EN LOS MODELOS Y NADA MÁS
   }
 
 

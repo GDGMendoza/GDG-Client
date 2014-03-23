@@ -1,0 +1,28 @@
+<table class="table table-condensed table-bordered table-hover">
+    <tr>
+        <th>Name
+        <th>Email
+        <th>Password
+        <th>Job
+        <th>Company
+        <th>G+
+        <th>Facebook
+        <th>Twitter
+        <th>Description
+        <th>Photo
+        <th>Edit
+    </tr>
+    <tr ng-repeat="contributor in contributorList">
+        <td>{{contributor.name}}
+        <td>{{contributor.email}}
+        <td>{{contributor.password}}
+        <td>{{contributor.job_position}}
+        <td>{{contributor.company}}
+        <td>{{contributor.google_plus}}
+        <td>{{contributor.facebook}}
+        <td>{{contributor.twitter}}
+        <td>{{contributor.description}}
+        <td>{{contributor.photo}}
+        <td><a ng-href="#/contributor/{{$index}}">Editar</a>
+    </tr>
+</table>
