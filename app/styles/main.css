@@ -153,7 +153,7 @@ p{
     background-color: #4099FF;
 }
 .gplus-icon-tiny,.fb-icon-tiny,.tw-icon-tiny,.gplus-icon-tiny img,.fb-icon-tiny img,.tw-icon-tiny img{
-    vertical-align: 0;
+    /*vertical-align: 0;*/
     height: 20px;
 }
 .gplus-icon-big,.fb-icon-big,.tw-icon-big,.gplus-icon-big img,.fb-icon-big img,.tw-icon-big img{
@@ -479,16 +479,77 @@ form .tiny-post-container {
     width: 100%;
 }
 .wwa-contributor-container{
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*-webkit-flex-flow: row wrap;*/
+    /*flex-flow: row wrap;*/
     margin: 10px;
     padding: 10px 0 5px 20px;
     background-color: #F2F2F2;
-    -webkit-border-image:   url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    -moz-border-image:      url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
-    border-image:           url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+    border-top-width: 1px;
+    border-top-color: lightgray;
+    border-top-style: solid;
+    box-shadow:
+        0px 1px 2px 0px white inset,
+        0px 1px 2px 0px white;
+    /*-webkit-border-image:   url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;*/
+    /*-moz-border-image:      url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;*/
+    /*border-image:           url('../images/horizontal-line.jpg')100% 0 100% 0 repeat !important;*/
+}
+.wwa-contributor-container-right{
+    flex: 1 auto;
+    order: 2;
+}
+.wwa-contributor-container-left{
+    flex-grow: 0;
+    width: 95px;
+    order: 1;
+    display: flex !important;
+    flex-direction: column;
+    border-right-color: lightgray;
+    border-right-width: 1px;
+    border-right-style: solid;
+    box-shadow: -4px 0px 1px -2px white inset;
+}
+.wma-contributor-container-icon{
+    
+}
+.wwa-contributor-container-top{
+    flex:1;
+}
+.wwa-contributor-container-bottom{
+    margin-top: 5px;
+    align: center;
+    padding-left: 8px;
+    flex-grow: 0;
+    justify-content: space-between;
+    align-content: center;
 }
 .wwa-contributor-image{
     height: 80px;
-    margin-top: 10px;
+    -webkit-box-shadow:
+        0px 4px 4px -3px #999999,
+        0px -4px 4px -3px #999999,
+        4px 0px 4px -3px #999999,
+        -4px 0px 4px -3px #999999;
+    -moz-box-shadow:
+        0px 4px 4px -3px #999999,
+        0px -4px 4px -3px #999999,
+        4px 0px 4px -3px #999999,
+        -4px 0px 4px -3px #999999;
+    box-shadow:
+        0px 4px 4px -3px #999999,
+        0px -4px 4px -3px #999999,
+        4px 0px 4px -3px #999999,
+        -4px 0px 4px -3px #999999;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 0px;
+    margin-bottom: 4px;
 }
 .wwa-contributor-name{
     margin: 10px 0 0 0 ;
@@ -500,9 +561,9 @@ form .tiny-post-container {
     margin: 10px 0 0 0;
     min-height: 80px;
     padding: 0 0 0 5px;
-    -webkit-border-image:   url('../images/vertical-line.jpg')0 0 0 100% repeat;
-    -moz-border-image:      url('../images/vertical-line.jpg')0 0 0 100% repeat;
-    border-image:           url('../images/vertical-line.jpg')0 0 0 100% repeat;
+    /*-webkit-border-image:   url('../images/vertical-line.jpg')0 0 0 100% repeat;*/
+    /*-moz-border-image:      url('../images/vertical-line.jpg')0 0 0 100% repeat;*/
+    /*border-image:           url('../images/vertical-line.jpg')0 0 0 100% repeat;*/
 }
 /*********** END WHO WE ARE ************/
 
