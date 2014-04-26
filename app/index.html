@@ -10,14 +10,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css({.tmp,app}) styles/main.css -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/vendor/normalize.css">
+    <link rel="stylesheet" href="styles/vendor/foundation.css">
+    <link rel="stylesheet" href="styles/vendor/font-awesome.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
     <!-- build:css styles/vendor.css -->
+
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
+
     <!-- endbuild -->
 
 
@@ -29,42 +34,38 @@
 
 <!-- Dynamic Content -->
 <div id="main-container">
+
     <header class="row">
-        <div class="visible-sm visible-xs col-sm-12 col-xs-12 navbar-toggle-container" >
-            <button type="button" class="navbar-toggle pull-right">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <div class="small-12 columns show-for-small-only navbar-toggle-container" >
+            <button type="button" class="button navbar-toggle pull-right"><i class="fa fa-bars"></i></button>
         </div>
-        <div class="row col-md-12 link-effect">
-            <nav class="col-md-1 col-sm-12 col-xs-12 header-center" >
+        <div class="small-12 medium-11 small-centered columns link-effect">
+            <nav class="medium-2 columns" >
                 <a href="#/blog">Blog</a>
             </nav>
-            <nav class="col-md-1 col-sm-12 col-xs-12" >
+            <nav class="medium-2 columns" >
                 <a href="#/events">Events</a>
             </nav>
-            <nav class="col-md-1 col-sm-12 col-xs-12" >
+            <nav class="medium-2 columns" >
                 <a href="#/who-we-are">WWA</a>
             </nav>
-            <nav class="col-md-1 col-sm-12 col-xs-12" >
+            <nav class="medium-2 columns" >
                 <a href="#">Contact</a>
             </nav>
-            <nav class="col-md-1 col-sm-12 col-xs-12" >
+            <nav class="medium-2 columns end" >
                 <a href="" ng-click="login()">Login</a>
             </nav>
         </div>
     </header>
 
-    <div id="body" class="container iswhoweare" ng-view></div>
+    <div id="body" class="row iswhoweare" ng-view></div>
 
     <footer class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12">
-            <img class="pagination-centered footer-logo" src="images/logo-footer.png" alt="GDG Mendoza Logo"/>
-        </div>
-        <div class="row col-md-6 col-sm-12 col-xs-12">
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-list footer-center">
+        <div class="small-12">
+            <div class="small-6 small-centered medium-uncentered columns">
+                <img class="footer-logo" src="images/logo-footer.png" alt="GDG Mendoza Logo"/>
+            </div>
+            <div class="medium-2 show-for-medium-up footer-list columns">
                 <ul class="list-unstyled">
                     <li>Home</li>
                     <li>Blog</li>
@@ -72,7 +73,7 @@
                     <li>Events</li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-list">
+            <div class="medium-2 show-for-medium-up footer-list columns">
                 <ul class="list-unstyled">
                     <li>Contact</li>
                     <li>Search</li>
@@ -80,7 +81,7 @@
                     <li>Register</li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 footer-list">
+            <div class="medium-2 show-for-medium-up footer-list columns">
                 <ul class="list-unstyled">
                     <li>Follow us</li>
                     <li>Google Plus</li>
@@ -196,17 +197,16 @@
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
 
+
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/ngAnimate-animate.css/animate.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>

@@ -10,26 +10,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 fix-row-padding" ng-repeat="contributor in contributorList">
-            <div class="wwa-contributor-container">
-                <div class="media wwa-contributor-container-right">
-                    <!--<div class="media-body">-->
+        <div class="small-12 medium-6 columns" ng-repeat="contributor in contributorList">
+            <div class="row wwa-contributor-container">
+                <div class="media small-4 columns social-tiny-container">
+                    <div class="clearfix">
+                        <a class="pull-left" href="#">
+                            <img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">
+                        </a>
+                    </div>
+                    <div class="clearfix">
+                        <a class="gplus-icon gplus-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.gplus }}"><i class="fa fa-google-plus"></i></a>
+                        <a class="fb-icon fb-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.fb }}"><i class="fa fa-facebook"></i></a>
+                        <a class="tw-icon tw-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.tw }}"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="media small-8 columns">
                     <div class="media-body wwa-media-body">
                         <h4 class="wwa-contributor-name"><a class="red red-hover" ng-href="#">{{contributor.name}}</a></h4>
                         <p>Developer</p>
-                    </div>
-                </div>
-                <div class="media social-tiny-container wwa-contributor-container-left">
-                    <div class="wwa-contributor-container-top">
-                    <a class="pull-left" href="#">
-                        <!--<img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">-->
-                        <img class="media-object wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">
-                    </a>
-                    </div>
-                    <div class="wwa-contributor-container-bottom">
-                    <a class="gplus-icon gplus-icon-tiny wma-contributor-container-icon" href="{{ contributor.gplus }}"><img src="images/gplus.png" alt=""/></a>
-                    <a class="fb-icon fb-icon-tiny wma-contributor-container-icon" href="{{ contributor.fb }}"><img src="images/facebook.png" alt=""/></a>
-                    <a class="tw-icon tw-icon-tiny wma-contributor-container-icon"href="{{ contributor.tw }}"><img src="images/twitter.png" alt=""/></a>
                     </div>
                 </div>
             </div>

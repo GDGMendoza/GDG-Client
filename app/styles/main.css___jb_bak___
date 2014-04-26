@@ -159,7 +159,7 @@ button, .button{
     vertical-align: middle;
     text-align: center;
     line-height: 25px;
-    margin: 10px 1px 0 1px;
+    margin: 10px 2px 0 2px;
     display: block;
     float: left;
     color: white;
