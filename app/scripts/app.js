@@ -1,9 +1,10 @@
 'use strict';
 
 var app = angular.module('gdgsiteApp', [
-        'ngSanitize',
-        'ngRoute'
-    ])
+    'ngSanitize',
+    'ngRoute',
+    'ngAnimate'
+])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {

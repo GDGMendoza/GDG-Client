@@ -32,66 +32,62 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<!-- Dynamic Content -->
-<div id="main-container">
-
-    <header class="row">
-        <div class="small-12 columns show-for-small-only navbar-toggle-container" >
-            <button type="button" class="button navbar-toggle pull-right"><i class="fa fa-bars"></i></button>
-        </div>
-        <div class="small-12 medium-11 small-centered columns link-effect">
-            <nav class="medium-2 columns" >
-                <a href="#/blog">Blog</a>
-            </nav>
-            <nav class="medium-2 columns" >
-                <a href="#/events">Events</a>
-            </nav>
-            <nav class="medium-2 columns" >
-                <a href="#/who-we-are">WWA</a>
-            </nav>
-            <nav class="medium-2 columns" >
-                <a href="#">Contact</a>
-            </nav>
-            <nav class="medium-2 columns end" >
-                <a href="" ng-click="login()">Login</a>
-            </nav>
-        </div>
-    </header>
-
-    <div id="body" class="row iswhoweare" ng-view></div>
-
-    <footer class="row">
-        <div class="small-12">
-            <div class="small-6 small-centered medium-uncentered columns">
-                <img class="footer-logo" src="images/logo-footer.png" alt="GDG Mendoza Logo"/>
+<div navigation>
+    <div id="wrapper">
+        <div id="body" class="row iswhoweare" ng-view></div>
+        <footer class="row">
+            <div class="small-12">
+                <div class="small-6 small-centered medium-uncentered columns">
+                    <img class="footer-logo" src="images/logo-footer.png" alt="GDG Mendoza Logo"/>
+                </div>
+                <div class="medium-2 show-for-medium-up footer-list columns">
+                    <ul class="list-unstyled">
+                        <li>Home</li>
+                        <li>Blog</li>
+                        <li>WWA</li>
+                        <li>Events</li>
+                    </ul>
+                </div>
+                <div class="medium-2 show-for-medium-up footer-list columns">
+                    <ul class="list-unstyled">
+                        <li>Contact</li>
+                        <li>Search</li>
+                        <li>Login</li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+                <div class="medium-2 show-for-medium-up footer-list columns">
+                    <ul class="list-unstyled">
+                        <li>Follow us</li>
+                        <li>Google Plus</li>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
             </div>
-            <div class="medium-2 show-for-medium-up footer-list columns">
-                <ul class="list-unstyled">
-                    <li>Home</li>
-                    <li>Blog</li>
-                    <li>WWA</li>
-                    <li>Events</li>
-                </ul>
-            </div>
-            <div class="medium-2 show-for-medium-up footer-list columns">
-                <ul class="list-unstyled">
-                    <li>Contact</li>
-                    <li>Search</li>
-                    <li>Login</li>
-                    <li>Register</li>
-                </ul>
-            </div>
-            <div class="medium-2 show-for-medium-up footer-list columns">
-                <ul class="list-unstyled">
-                    <li>Follow us</li>
-                    <li>Google Plus</li>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script id="postListView.html" type="text/ng-template">
     <div class="row" ng-repeat="post in postList" ng-include="getPostTemplate($index)"></div>
@@ -203,6 +199,7 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -212,6 +209,8 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/home.js"></script>
 <script src="scripts/directives/iswhoweare.js"></script>
+<script src="scripts/directives/navigation.js"></script>
+<script src="scripts/directives/verticalAling.js"></script>
 <!-- endbuild -->
 
 <script>
