@@ -34,7 +34,9 @@
 
 <div navigation>
     <div id="wrapper">
+
         <div id="body" class="row iswhoweare" ng-view></div>
+
         <footer class="row">
             <div class="small-12">
                 <div class="small-6 small-centered medium-uncentered columns">
@@ -89,11 +91,11 @@
 
 
 
-<script id="postListView.html" type="text/ng-template">
-    <div class="row" ng-repeat="post in postList" ng-include="getPostTemplate($index)"></div>
+<script id="views/postListView.html" type="text/ng-template">
+    <div class="row" ng-repeat="post in blog.postList" ng-include="blog.getPostTemplate($index)"></div>
 </script>
 
-<script id="postPreviewBigComponent.html" type="text/ng-template">
+<script id="views/postPreviewBigComponent.html" type="text/ng-template">
     <div class="row">
         <div class="col-md-2 col-sm-2 col-xs-12 author-img">
             <a href="#">
@@ -122,7 +124,7 @@
     </div>
 </script>
 
-<script id="postPreviewTinyComponent.html" type="text/ng-template">
+<script id="views/postPreviewTinyComponent.html" type="text/ng-template">
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="row tag-container-tiny">
@@ -208,9 +210,11 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/blog.js"></script>
 <script src="scripts/directives/iswhoweare.js"></script>
 <script src="scripts/directives/navigation.js"></script>
 <script src="scripts/directives/verticalAling.js"></script>
+<script src="scripts/directives/scrollAwareHeader.js"></script>
 <!-- endbuild -->
 
 <script>
