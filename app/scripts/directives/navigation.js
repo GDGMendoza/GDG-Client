@@ -15,6 +15,16 @@ angular.module('gdgsiteApp')
                     $scope.menu.visible = false;
                     $scope.$apply();
                 };
+                $scope.links = [{
+                    url: '#/',
+                    name: 'Home'
+                },{
+                    url: '#/blog',
+                    name: 'Blog'
+                },{
+                    url: '#/',
+                    name: 'Who we are'
+                }];
             }
         }
     }]);

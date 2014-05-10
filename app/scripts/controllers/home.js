@@ -2,9 +2,15 @@
 
 angular.module('gdgsiteApp')
   .controller('HomeCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    var home = this;
+    home.links = [{
+        url: '#/',
+        name: 'Home'
+    },{
+        url: '#/blog',
+        name: 'Blog'
+    },{
+        url: '#/',
+        name: 'Who we are'
+    }];
   });
