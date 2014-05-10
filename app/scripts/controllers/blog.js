@@ -7,6 +7,7 @@ angular.module('gdgsiteApp')
         blogController.postList = [];
         for(var i = 0; i < 10; i++){
             blogController.postList.push({
+                id: i.toString(),
                 author: "Google User",
                 title: "title"+i,
                 dashedTitle: "dashedTitle"+i,

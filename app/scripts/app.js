@@ -13,9 +13,14 @@ var app = angular.module('gdgsiteApp', [
                 controllerAs: 'home'
             })
             .when('/blog', {
-                'templateUrl': 'views/postListView.html',
+                templateUrl: 'views/postListView.html',
                 controller: 'BlogCtrl',
                 controllerAs: 'blog'
+            })
+            .when('/blog/:id', {
+                templateUrl: 'views/postView.html',
+                controller: 'PostCtrl',
+                constrollerAs: 'post'
             })
             .when('/who-we-are', {
                 templateUrl: 'views/wwa.html',
