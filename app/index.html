@@ -34,7 +34,9 @@
 
 <div navigation>
     <div id="wrapper">
+
         <div id="body" class="row iswhoweare" ng-view></div>
+
         <footer class="row">
             <div class="small-12 columns">
                 <div class="small-6 small-centered medium-uncentered columns">
@@ -94,11 +96,11 @@
 
 
 
-<script id="postListView.html" type="text/ng-template">
-    <div class="row" ng-repeat="post in postList" ng-include="getPostTemplate($index)"></div>
+<script id="views/postListView.html" type="text/ng-template">
+    <div class="row" ng-repeat="post in blog.postList" ng-include="blog.getPostTemplate($index)"></div>
 </script>
 
-<script id="postPreviewBigComponent.html" type="text/ng-template">
+<script id="views/postPreviewBigComponent.html" type="text/ng-template">
     <div class="row">
         <div class="col-md-2 col-sm-2 col-xs-12 author-img">
             <a href="#">
@@ -127,7 +129,7 @@
     </div>
 </script>
 
-<script id="postPreviewTinyComponent.html" type="text/ng-template">
+<script id="views/postPreviewTinyComponent.html" type="text/ng-template">
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="row tag-container-tiny">
@@ -158,29 +160,29 @@
     </div>
 </script>
 
-<script id="postView.html" type="text/ng-template">
+<script id="views/postView.html" type="text/ng-template">
     <div class="row separator">
-        <img class="col-md-12 image-shadow fix-row-padding big-image" ng-src="{{post.cover}}" alt="">
+        <img class="col-md-12 image-shadow fix-row-padding big-image" ng-src="{{post.post.cover}}" alt="">
     </div>
     <div class="row big-post-foot">
         <div class="col-md-3 col-sm-3 col-xs-12 text-center">
-            <img class="image-shadow author-img" ng-src="{{post.author.photo}}" alt="Profile photo of {{post.author.name }}"/>
-            <h4 class="post-author"><a class="red red-hover" ng-href="#">{{post.author.name}}</a></h4>
+            <img class="image-shadow author-img" ng-src="{{post.post.author.photo}}" alt="Profile photo of {{post.post.author.name }}"/>
+            <h4 class="post-author"><a class="red red-hover" ng-href="#">{{post.post.author.name}}</a></h4>
             <div class="tag-container-tiny">
-                <a class="label label-default tag-preview" ng-href="#" ng-repeat="tag in post.tags">{{tag}}</a>
+                <a class="label label-default tag-preview" ng-href="#" ng-repeat="tag in post.post.tags">{{tag}}</a>
             </div>
         </div>
         <div class="col-md-9 col-sm-9 col-xs-12 big-post-container line-height">
-            <h1 class="dark-grey post-title">{{ post.title }}</h1>
-            <a class="big-post-date light-grey light-grey-hover" ng-href="#">Date: {{post.date}}</a>
-            <p class="post-paragraph">{{post.description}}</p>
-            <p class="post-paragraph">{{post.description}}</p>
+            <h1 class="dark-grey post-title">{{ post.post.title }}</h1>
+            <a class="big-post-date light-grey light-grey-hover" ng-href="#">Date: {{post.post.date}}</a>
+            <p class="post-paragraph">{{post.post.description}}</p>
+            <p class="post-paragraph">{{post.post.description}}</p>
             <div class="row separator post-social-container">
-                <a class="pull-right gplus-icon gplus-icon-big" href="{{ post.author.gplus }}"><img src="images/gplus.png" alt=""/></a>
-                <a class="pull-right fb-icon fb-icon-big" href="{{ post.author.fb }}"><img src="images/facebook.png" alt=""/></a>
-                <a class="pull-right tw-icon tw-icon-big"href="{{ post.author.tw }}"><img src="images/twitter.png" alt=""/></a>
+                <a class="pull-right gplus-icon gplus-icon-big" href="{{ post.post.author.gplus }}"><img src="images/gplus.png" alt=""/></a>
+                <a class="pull-right fb-icon fb-icon-big" href="{{ post.post.author.fb }}"><img src="images/facebook.png" alt=""/></a>
+                <a class="pull-right tw-icon tw-icon-big"href="{{ post.post.author.tw }}"><img src="images/twitter.png" alt=""/></a>
             </div>
-            <comment ng-repeat="comment in post.comments_all"></comment>
+            <comment ng-repeat="comment in post.post.comments_all"></comment>
             <form method="post" ng-submit="subir()">
                 <div class="tiny-post-container">
                     <textarea class="comment" ng-model="escribir.contenido" placeholder="Write a comment..." maxlength="500"></textarea>
@@ -213,9 +215,12 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/blog.js"></script>
+<script src="scripts/controllers/post.js"></script>
 <script src="scripts/directives/iswhoweare.js"></script>
 <script src="scripts/directives/navigation.js"></script>
 <script src="scripts/directives/verticalAling.js"></script>
+<script src="scripts/directives/scrollAwareHeader.js"></script>
 <!-- endbuild -->
 
 <script>

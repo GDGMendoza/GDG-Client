@@ -15,6 +15,16 @@ angular.module('gdgsiteApp')
                     $scope.menu.visible = false;
                     $scope.$apply();
                 };
+                $scope.links = [{
+                    url: '#/',
+                    name: 'Home'
+                },{
+                    url: '#/blog',
+                    name: 'Blog'
+                },{
+                    url: '#/',
+                    name: 'Who we are'
+                }];
             }
         }
     }]);
@@ -76,10 +86,11 @@ angular.module('gdgsiteApp')
 angular.module('gdgsiteApp')
     .animation('.menuShow',function(){
         var children = null;
-        var timeline = new TimelineLite();
+        var timeline;
         return {
             addClass: function(element){
                 if(!children) children = element.children();
+                timeline = new TimelineLite();
                 for (var i = 0; i < children.length; i++){
                     timeline.fromTo(angular.element(children[i]),0.1,{x:-50,opacity:0},{x:0,opacity:1})
                 }
