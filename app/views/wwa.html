@@ -1,5 +1,28 @@
-<div class="wwa-background"></div>
-<div class="separator-color"></div>
+<span class="wwa-background unselectable">
+    <div class="bg-image">
+    <img src="images/world-map.png" alt="" />
+    <div class="bg-image-content">
+    <span class="wwa-descriptionmision-container">
+        <span class="wwa-description-container">
+        <h1 class="wwa-description-title">
+            {{descriptionTitle}}
+        </h1>
+        <p class="wwa-description-content">
+            {{descriptionTextualContent}}
+        </p>
+        </span>
+        <span class="wwa-mision-container">
+        </span>
+    </span>
+        <span class="wwa-logofollowus-container">
+        hola soy el contenido!
+        </span>
+    </div>
+    </div>
+    <span class="inner">
+    </span>
+</span>
+<span class="separator-color unselectable"><span class="inner"></span></span>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -10,25 +33,40 @@
         </div>
     </div>
     <div class="row">
-        <div class="small-12 medium-6 columns" ng-repeat="contributor in contributorList">
-            <div class="row wwa-contributor-container">
-                <div class="media small-4 columns social-tiny-container">
-                    <div class="clearfix">
-                        <a class="pull-left" href="#">
-                            <img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">
-                        </a>
+        <div class="col-md-4 fix-row-padding" ng-repeat="contributor in contributorList">
+            <div class="wwa-contributor-principal-container">
+                <div class="wwa-contributor-container-top">
+                    <div class="media wwa-contributor-container-right">
+                        <!--<div class="media-body">-->
+                        <div class="media-body wwa-media-body">
+                            <h4 class="wwa-contributor-name"
+                                style="display: flex; flex-direction: column; max-width: 142px;">
+                                <a class="red red-hover" style="order: 1;" ng-href="#">{{contributor.name}}</a>
+                            </h4>
+                            <p class="wwa-contributor-specialism" data-ng-bind="contributor.specialism"></p>
+                            <p class="wwa-contributor-company" data-ng-show="contributor.company" data-ng-bind="contributor.company+' ®'"></p>
+                        </div>
                     </div>
-                    <div class="clearfix">
-                        <a class="gplus-icon gplus-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.gplus }}"><i class="fa fa-google-plus"></i></a>
-                        <a class="fb-icon fb-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.fb }}"><i class="fa fa-facebook"></i></a>
-                        <a class="tw-icon tw-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.tw }}"><i class="fa fa-twitter"></i></a>
+                    <div class="media social-tiny-container wwa-contributor-container-left">
+                        <div class="wwa-contributor-container-left-top">
+                        <a class="pull-left" href="#">
+                            <!--<img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">-->
+                            <img class="media-object wwa-contributor-image-photo" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">
+                        </a>
+                        </div>
+                        <div class="wwa-contributor-container-left-bottom">
+                        <a class="gplus-icon gplus-icon-tiny wma-contributor-container-icon" ng-if="contributor.gplus" target="_blank" href="{{ contributor.gplus }}"><img src="images/gplus.png" alt=""/></a>
+                        <a class="fb-icon fb-icon-tiny wma-contributor-container-icon" ng-if="contributor.fb" target="_blank" href="{{ contributor.fb }}"><img src="images/facebook.png" alt=""/></a>
+                        <a class="tw-icon tw-icon-tiny wma-contributor-container-icon" ng-if="contributor.tw" target="_blank" href="{{ contributor.tw }}"><img src="images/twitter.png" alt=""/></a>
+                        </div>
                     </div>
                 </div>
-                <div class="media small-8 columns">
-                    <div class="media-body wwa-media-body">
-                        <h4 class="wwa-contributor-name"><a class="red red-hover" ng-href="#">{{contributor.name}}</a></h4>
-                        <p>Developer</p>
-                    </div>
+                <div class="wwa-contributor-container-bottom">
+                    <div city="{{contributor.location}}" width="243" height="159" ></div>
+                    <!--<a class="" href="#">-->
+                        <!--&lt;!&ndash;<img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">&ndash;&gt;-->
+                        <!--<img class="media-object wwa-contributor-image-location" ng-src="{{contributor.location}}" alt="Location of {{contributor.name }}">-->
+                    <!--</a>-->
                 </div>
             </div>
         </div>
