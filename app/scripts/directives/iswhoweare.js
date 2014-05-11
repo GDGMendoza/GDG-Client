@@ -8,7 +8,7 @@ angular.module('gdgsiteApp')
                 if($location.url() === '/who-we-are'){
                     element.css({'padding-top':'0'});
                 }else{
-                    element.css({'padding-top':'50px'});
+                    element.css({'padding-top':'60px'});
                 }
             }
         }

@@ -61,7 +61,7 @@ angular.module('gdgsiteApp')
             addClass: function(element){
                 if(!parent) parent = angular.element(element.parent());
                 parent.addClass('modalView');
-                TweenMax.to(element,1,{x:"1100%",z:"-2000px",rotationY:-45});
+                TweenMax.to(element,1,{x:"400%",z:"-1500px",rotationY:-45});
             },
             removeClass: function(element){
                 if(!parent) parent = angular.element(element.parent());

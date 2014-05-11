@@ -369,6 +369,12 @@ header {
     min-width: 100% !important;
     background: rgb(51,51,51);
 }
+
+.row-header {
+    max-width: 62.5em !important;
+}
+
+
 header nav {
     text-align: center;
     height: auto;
@@ -604,6 +610,7 @@ form .tiny-post-container {
 /****************************************** START FOOTER *************************************************/
 footer{
     position: absolute;
+    min-width: 100% !important;
     bottom: 0;
     width: 100%;
     /* Height must match #body padding-bottom propery */
