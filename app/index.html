@@ -35,11 +35,11 @@
 <div navigation>
     <div id="wrapper">
 
-        <div id="body" class="row iswhoweare" ng-view></div>
+        <div id="body" class="iswhoweare" ng-view></div>
 
         <footer class="row">
             <div class="small-12 columns">
-                <div class="small-6 small-centered medium-uncentered columns">
+                <div class="small-10 medium-12 small-centered medium-uncentered columns">
                     <div class="row">
                         <div class="medium-1 columns" style="height:1px"></div>
                         <div class="medium-10 columns">
@@ -84,81 +84,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<script id="views/postListView.html" type="text/ng-template">
-    <div class="row" ng-repeat="post in blog.postList" ng-include="blog.getPostTemplate($index)"></div>
-</script>
-
-<script id="views/postPreviewBigComponent.html" type="text/ng-template">
-    <div class="row">
-        <div class="col-md-2 col-sm-2 col-xs-12 author-img">
-            <a href="#">
-                <img class="image-shadow" ng-src="{{post.author.photo}}" alt="Profile photo of {{post.author.name }}"/>
-            </a>
-        </div>
-        <div class="col-md-8 col-sm-8 col-xs-12 big-post-container">
-            <h1><a class="dark-grey dark-grey-hover"ng-href="#/blog/{{post.id}}">{{post.title}}</a></h1>
-            <h3 class="big-post-author"><a class="red red-hover" ng-href="#">{{post.author.name}}</a></h3>
-            <a class="big-post-date grey grey-hover" ng-href="#">Date: {{post.date}}</a>
-        </div>
-    </div>
-    <div class="row">
-        <img class="col-md-12 image-shadow fix-row-padding big-image" ng-src="{{post.cover}}" alt="">
-    </div>
-    <div class="row big-post-foot">
-        <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="row tag-container-tiny">
-                <a class="label label-default tag-preview" ng-href="#" ng-repeat="tag in post.tags">{{tag}}</a>
-            </div>
-        </div>
-        <div class="col-md-9 col-sm-3 col-xs-12 big-post-container line-height">
-            <p>{{post.description}}</p>
-            <a href="#/blog/{{ post.id }}">Read more</a>
-        </div>
-    </div>
-</script>
-
-<script id="views/postPreviewTinyComponent.html" type="text/ng-template">
-    <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="row tag-container-tiny">
-                <a class="label label-default tag-preview" ng-href="#" ng-repeat="tag in post.tags">{{tag}}</a>
-            </div>
-            <div class="row">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object image-shadow tiny-contributor-image" ng-src="{{post.author.photo}}" alt="Profile photo of {{post.author.name }}">
-                    </a>
-                    <div class="media-body">
-                        <h5 class="tiny-post-author"><a class="red red-hover" ng-href="#">{{post.author.name}}</a></h5>
-                        <a class="tiny-post-date grey grey-hover" ng-href="#">Date: {{post.date}}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9 col-sm-9 col-xs-12 tiny-post-container line-height">
-            <div class="col-md-3 col-sm-3 col-xs-12 fix-row-padding">
-                <img class="image-shadow tiny-image" ng-src="{{post.cover}}" alt="">
-            </div>
-            <div class="col-md-9 col-sm-9 col-xs-12 tiny-description">
-                <h4><a class="dark-grey dark-grey-hover" ng-href="#/blog/{{post.id}}">{{post.title}}</a></h4>
-                <p>{{post.description}}</p>
-                <a href="#/blog/{{ post.id }}">Read more</a>
-            </div>
-        </div>
-    </div>
-</script>
 
 <script id="views/postView.html" type="text/ng-template">
     <div class="row separator">

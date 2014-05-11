@@ -35,6 +35,10 @@ angular.module('gdgsiteApp')
             restrict: "A",
             require: '^navigation',
             link: function(scope,element,attrs,navigationCtrl){
+                scope.hideMenu = function(){
+                    navigationCtrl.hideMenu();
+                    $animate.removeClass(element,'hideMenu');
+                };
                 scope.$watch(attrs.containerPerspective,function(newVal){
                     if (!newVal){
                         $animate.addClass(element,'hideMenu');

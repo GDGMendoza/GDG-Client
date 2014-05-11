@@ -23,10 +23,10 @@ angular.module('gdgsiteApp')
     .animation('.hideHeader',function(){
         return {
             addClass: function(element){
-                TweenMax.to(element, 0.3, {y: '-100px'});
+                TweenMax.to(element, 1, {y: '-100px'});
             },
             removeClass: function(element){
-                TweenMax.to(element, 0.3, {y: '0px'});
+                TweenMax.to(element,0.5, {y: '0px'});
             }
         }
     });

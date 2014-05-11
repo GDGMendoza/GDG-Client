@@ -13,11 +13,11 @@ var app = angular.module('gdgsiteApp', [
                 controllerAs: 'home'
             })
             .when('/blog', {
-                templateUrl: 'views/postListView.html',
+                templateUrl: 'views/blog.html',
                 controller: 'BlogCtrl',
                 controllerAs: 'blog'
             })
-            .when('/blog/:id', {
+            .when('/blog/post/:id', {
                 templateUrl: 'views/postView.html',
                 controller: 'PostCtrl',
                 constrollerAs: 'post'
