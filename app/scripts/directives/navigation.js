@@ -4,47 +4,55 @@ angular.module('gdgsiteApp')
     .directive('navigation', [function () {
         return {
             restrict: "A",
-            templateUrl:'views/directives/navigation.html',
-            transclude:true,
-            controller: function($scope){
-                $scope.menu = {visible:false};
-                $scope.toggleMenu = function(){
+            templateUrl: 'views/directives/navigation.html',
+            transclude: true,
+            controller: ['$scope', function ($scope) {
+                $scope.menu = {visible: false};
+                $scope.toggleMenu = function () {
                     $scope.menu.visible = !$scope.menu.visible;
                 };
-                this.hideMenu = function(){
+                this.hideMenu = function () {
                     $scope.menu.visible = false;
-                    $scope.$apply();
+                    //$scope.$apply();
                 };
-                $scope.links = [{
-                    url: '#/',
-                    name: 'Home'
-                },{
-                    url: '#/blog',
-                    name: 'Blog'
-                },{
-                    url: '#/',
-                    name: 'Who we are'
-                }];
-            }
+                $scope.links = [
+                    {
+                        url: '#/',
+                        name: 'Home'
+                    },
+                    {
+                        url: '#/blog',
+                        name: 'Blog'
+                    },
+                    {
+                        url: '#/events',
+                        name: 'Events'
+                    },
+                    {
+                        url: '#/who-we-are',
+                        name: 'Who we are'
+                    }
+                ];
+            }]
         }
     }]);
 
 angular.module('gdgsiteApp')
-    .directive('containerPerspective', ['$animate',function ($animate) {
+    .directive('containerPerspective', ['$animate', function ($animate) {
         return {
             restrict: "A",
             require: '^navigation',
-            link: function(scope,element,attrs,navigationCtrl){
-                scope.hideMenu = function(){
+            link: function (scope, element, attrs, navigationCtrl) {
+                scope.hideMenu = function () {
                     navigationCtrl.hideMenu();
-                    $animate.removeClass(element,'hideMenu');
+                    $animate.removeClass(element, 'hideMenu');
                 };
-                scope.$watch(attrs.containerPerspective,function(newVal){
-                    if (!newVal){
-                        $animate.addClass(element,'hideMenu');
-                        element.bind('click',navigationCtrl.hideMenu);
+                scope.$watch(attrs.containerPerspective, function (newVal) {
+                    if (!newVal) {
+                        $animate.addClass(element, 'hideMenu');
+                        element.bind('click', navigationCtrl.hideMenu);
                     } else {
-                        $animate.removeClass(element,'hideMenu');
+                        $animate.removeClass(element, 'hideMenu');
                         element.unbind('click');
                     }
                 });
@@ -53,15 +61,15 @@ angular.module('gdgsiteApp')
     }]);
 
 angular.module('gdgsiteApp')
-    .directive('menuPerspective', ['$animate',function ($animate) {
+    .directive('menuPerspective', ['$animate', function ($animate) {
         return {
             restrict: "A",
-            link: function(scope,element,attrs){
-                scope.$watch(attrs.menuPerspective,function(newVal){
-                    if (newVal){
-                        $animate.addClass(element,'menuShow');
+            link: function (scope, element, attrs) {
+                scope.$watch(attrs.menuPerspective, function (newVal) {
+                    if (newVal) {
+                        $animate.addClass(element, 'menuShow');
                     } else {
-                        $animate.removeClass(element,'menuShow');
+                        $animate.removeClass(element, 'menuShow');
                     }
                 });
             }
@@ -69,38 +77,38 @@ angular.module('gdgsiteApp')
     }]);
 
 angular.module('gdgsiteApp')
-    .animation('.hideMenu',function(){
+    .animation('.hideMenu', function () {
         var parent = null;
         return {
-            addClass: function(element){
-                if(!parent) parent = angular.element(element.parent());
+            addClass: function (element) {
+                if (!parent) parent = angular.element(element.parent());
                 parent.addClass('modalView');
-                TweenMax.to(element,1,{x:"400%",z:"-1500px",rotationY:-45});
+                TweenMax.to(element, 1, {x: "400%", z: "-1500px", rotationY: -45});
             },
-            removeClass: function(element){
-                if(!parent) parent = angular.element(element.parent());
-                var callback = function(){
+            removeClass: function (element) {
+                if (!parent) parent = angular.element(element.parent());
+                var callback = function () {
                     parent.removeClass('modalView');
                 };
-                TweenMax.to(element,1,{x:0,z:0,rotationY:0,onComplete:callback});
+                TweenMax.to(element, 1, {x: 0, z: 0, rotationY: 0, onComplete: callback});
             }
         }
     });
 
 angular.module('gdgsiteApp')
-    .animation('.menuShow',function(){
+    .animation('.menuShow', function () {
         var children = null;
         var timeline;
         return {
-            addClass: function(element){
-                if(!children) children = element.children();
+            addClass: function (element) {
+                if (!children) children = element.children();
                 timeline = new TimelineLite();
-                for (var i = 0; i < children.length; i++){
-                    timeline.fromTo(angular.element(children[i]),0.1,{x:-50,opacity:0},{x:0,opacity:1})
+                for (var i = 0; i < children.length; i++) {
+                    timeline.fromTo(angular.element(children[i]), 0.1, {x: -50, opacity: 0}, {x: 0, opacity: 1})
                 }
                 timeline.play()
             },
-            removeClass: function(){
+            removeClass: function () {
                 timeline.restart();
                 timeline.pause();
             }

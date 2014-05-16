@@ -10,24 +10,29 @@
         </div>
     </div>
     <div class="row">
-        <div class="small-12 medium-6 columns" ng-repeat="contributor in contributorList">
+        <div class="small-12 medium-6 columns" ng-repeat="contributor in wwaCtrl.contributorList">
             <div class="row wwa-contributor-container">
                 <div class="media small-4 columns social-tiny-container">
                     <div class="clearfix">
                         <a class="pull-left" href="#">
-                            <img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}" alt="Profile photo of {{contributor.name }}">
+                            <img class="media-object image-shadow wwa-contributor-image" ng-src="{{contributor.photo}}"
+                                 alt="Profile photo of {{contributor.name }}">
                         </a>
                     </div>
                     <div class="clearfix">
-                        <a class="gplus-icon gplus-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.gplus }}"><i class="fa fa-google-plus"></i></a>
-                        <a class="fb-icon fb-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.fb }}"><i class="fa fa-facebook"></i></a>
-                        <a class="tw-icon tw-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.tw }}"><i class="fa fa-twitter"></i></a>
+                        <a class="gplus-icon gplus-icon-tiny wma-contributor-container-icon"
+                           ng-href="{{ contributor.googlePlus }}"><i class="fa fa-google-plus"></i></a>
+                        <a class="fb-icon fb-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.facebook }}"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="tw-icon tw-icon-tiny wma-contributor-container-icon" ng-href="{{ contributor.twitter }}"><i
+                                class="fa fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="media small-8 columns">
                     <div class="media-body wwa-media-body">
-                        <h4 class="wwa-contributor-name"><a class="red red-hover" ng-href="#">{{contributor.name}}</a></h4>
-                        <p>Developer</p>
+                        <h4 class="wwa-contributor-name"><a class="red red-hover" ng-href="#/contributors/{{contributor._id}}">{{contributor.name}}</a></h4>
+                        <span>{{contributor.title}}</span><br>
+                        <span>Empresa: {{contributor.company}}</span></p>
                     </div>
                 </div>
             </div>
