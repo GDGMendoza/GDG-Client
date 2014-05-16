@@ -33,18 +33,18 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        tasks: [],
         options: {
           livereload: true
         }
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        tasks: ['karma']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles']//, 'autoprefixer'
+        tasks: ['newer:copy:styles']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -95,24 +95,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
-      ],
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
-      }
-    },
-
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -127,22 +109,6 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
-
-    // Add vendor prefixed styles
-    //autoprefixer: {
-    //  options: {
-    //    browsers: ['last 1 version']
-    //  },
-    //  dist: {
-    //    files: [{
-    //      expand: true,
-    //      cwd: '.tmp/styles/',
-    //      src: '{,*/}*.css',
-    //      dest: '.tmp/styles/'
-    //    }]
-    //  }
-    //},
-
 
     // Automatically inject Bower components into the app
     bowerInstall: {
@@ -352,7 +318,6 @@ module.exports = function (grunt) {
       'clean:server',
       'bowerInstall',
       'concurrent:server',
-      //'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
@@ -366,7 +331,6 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
-    //'autoprefixer',
     'connect:test',
     'karma'
   ]);
@@ -376,7 +340,6 @@ module.exports = function (grunt) {
     'bowerInstall',
     'useminPrepare',
     'concurrent:dist',
-    //'autoprefixer',
     'concat',
     'ngmin',
     'copy:dist',
@@ -389,7 +352,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
     'test',
     'build'
   ]);
