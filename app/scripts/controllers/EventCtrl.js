@@ -1,7 +1,12 @@
-/**
- * Created with JetBrains WebStorm.
- * User: DUDE
- * Date: 17/05/14
- * Time: 17:51
- * To change this template use File | Settings | File Templates.
- */
+'use strict';
+
+angular.module('gdgsiteApp')
+    .controller('EventCtrl', ['$scope', '$window', '$routeParams', 'EventService', 'ContributorService', function ($scope, $window, $routeParams, EventService, ContributorService) {
+
+        var eventCtrl = this;
+        eventCtrl.eventList = EventService.eventList;
+        eventCtrl.currentEvent = eventCtrl.eventList[$routeParams.uniqueTitle];
+        eventCtrl.contributorList = ContributorService.contributorList;
+        $scope.eventCtrl = eventCtrl;
+
+    }]);
