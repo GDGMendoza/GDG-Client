@@ -7,6 +7,5 @@ angular.module('gdgsiteApp')
         eventCtrl.eventList = EventService.eventList;
         eventCtrl.currentEvent = eventCtrl.eventList[$routeParams.uniqueTitle];
         eventCtrl.contributorList = ContributorService.contributorList;
-        $scope.eventCtrl = eventCtrl;
 
     }]);
