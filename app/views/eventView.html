@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="small-12">
+        {{singleEventCtrl.currentEvent}}
+        <span class="small-12" ng-bind="singleEventCtrl.currentEvent.title"></span>
+        <span class="small-12" ng-bind="singleEventCtrl.currentEvent.uniqueTitle"></span>
+        <div>
+            <img class="image-shadow" ng-src="{{singleEventCtrl.currentEvent.cover}}"/>
+        </div>
+        <span ng-bind="singleEventCtrl.currentEvent.description"></span>
+        <span ng-bind="singleEventCtrl.currentEvent.diffilculty"></span>
+        <span ng-bind="singleEventCtrl.currentEvent.eventDate"></span>
+        <span ng-bind="singleEventCtrl.currentEvent.googlePlusAlbum"></span>
+    </div>
+</div>

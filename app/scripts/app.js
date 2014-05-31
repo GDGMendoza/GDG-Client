@@ -48,6 +48,17 @@ var app = angular.module('gdgsiteApp', ['ngSanitize', 'ngRoute', 'ngAnimate'])
             return defer.promise;
         }];
 
+        promisesProvider.singleEventPromise = ['$q', '$route', 'EventService', function ($q, $route, EventService) {
+            var defer = $q.defer();
+            var uniqueTitle = $route.current.params.uniqueTitle;
+            if (!EventService.eventList[uniqueTitle]) {
+                EventService.findEventByUniqueTitle(uniqueTitle).then(function () {
+                    defer.resolve();
+                });
+            } else defer.resolve();
+            return defer.promise;
+        }];
+
         //TODO: promisesProvider.singleEventPromise
 
         $routeProvider
@@ -85,6 +96,24 @@ var app = angular.module('gdgsiteApp', ['ngSanitize', 'ngRoute', 'ngAnimate'])
                 controllerAs: 'wwaCtrl',
                 resolve: {
                     contributorListPromise: promisesProvider.contributorListPromise
+                }
+            })
+            .when('/events', {
+                templateUrl: 'views/event.html',
+                controller: 'EventCtrl',
+                controllerAs: 'eventCtrl',
+                resolve: {
+                    contributorListPromise: promisesProvider.contributorListPromise,
+                    eventListPromise: promisesProvider.eventListPromise
+                }
+            })
+            .when('/events/:uniqueTitle',{
+                templateUrl: 'views/eventView.html',
+                controller: 'SingleEventCtrl',
+                controllerAs: 'singleEventCtrl',
+                resolve: {
+                    contributorListPromise: promisesProvider.contributorListPromise,
+                    eventPromise: promisesProvider.singleEventPromise
                 }
             })
             .otherwise({
