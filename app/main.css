@@ -321,7 +321,9 @@ footer{
 /****************************************** END HELPERS *************************************************/
 
 /****************************************** START NAVIGATION ********************************************/
-
+.navigation-container{
+    height: 100%;
+}
 .perspective {
     background: #aaa;
     position: relative;
@@ -358,7 +360,6 @@ footer{
 /* Outer Nav */
 .outer-nav {
     position: absolute;
-    height: auto;
     font-size: 2em;
 }
 

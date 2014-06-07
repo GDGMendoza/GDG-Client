@@ -33,7 +33,7 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div navigation>
+<div navigation class="navigation-container">
     <div id="wrapper">
 
         <div id="body" class="iswhoweare" ng-view></div>
@@ -167,10 +167,23 @@
 <script src="who-we-are/who-we-are-controller.js"></script>
 <script src="who-we-are/iswhoweare-directive.js"></script>
 
-<!-- explotar estos componentes en sub elementos -->
+<script src="components/backend/backend.js"></script>
+<script src="components/backend/contributor-service.js"></script>
+<script src="components/backend/event-service.js"></script>
+<script src="components/backend/post-service.js"></script>
+<script src="components/backend/subscription-service.js"></script>
+
 <script src="components/navigation/navigation.js"></script>
-<script src="components/scroll-aware-header/scrollAwareHeader.js"></script>
-<script src="components/vertical-align/verticalAling.js"></script>
+<script src="components/navigation/navigation-controller.js"></script>
+<script src="components/navigation/navigation-animation.js"></script>
+<script src="components/navigation/navigation-directive.js"></script>
+
+<script src="components/scroll-aware-header/scrollawareheader.js"></script>
+<script src="components/scroll-aware-header/scrollawareheader-directive.js"></script>
+<script src="components/scroll-aware-header/scrollawareheader-animation.js"></script>
+
+<script src="components/vertical-align/verticalaling.js"></script>
+<script src="components/vertical-align/verticalaling-directive.js"></script>
 <!-- endbuild -->
 
 <script>

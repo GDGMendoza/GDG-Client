@@ -1,3 +1,10 @@
-/**
- * Created by hernan on 07/06/14.
- */
+(function(){
+
+    'use strict';
+    var app = angular.module('gdgApp.navigation', ['ngAnimate','gdgApp.verticalAlign']);
+
+    var config = {};
+
+    app.constant('navigationConfig', config);
+
+})();
