@@ -7,6 +7,7 @@
         return {
             restrict: "A",
             link: function (scope, element) {
+
                 function checkHeight(){
                     return element[0].clientHeight;
                 }

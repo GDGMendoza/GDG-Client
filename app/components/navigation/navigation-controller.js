@@ -8,6 +8,7 @@
         };
         this.hideMenu = function () {
             $scope.menu.visible = false;
+            $scope.$digest();
         };
         $scope.links = [
             {
