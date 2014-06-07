@@ -696,6 +696,10 @@ form .tiny-post-container {
     border-image: url('../img/vertical-line.jpg') 0 0 0 100% repeat;
 }
 
+.is-who-we-are {
+    padding-top: 0 !important;
+}
+
 /*********** END WHO WE ARE ************/
 
 /****************************************** END BODY *************************************************/

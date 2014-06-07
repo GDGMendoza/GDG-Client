@@ -36,7 +36,7 @@
 <div navigation class="navigation-container">
     <div id="wrapper">
 
-        <div id="body" class="iswhoweare" ng-view></div>
+        <div id="body" ng-class="{'is-who-we-are': isWhoWeAre}" ng-view></div>
 
         <footer class="row">
             <div class="small-12 columns">
@@ -165,7 +165,6 @@
 
 <script src="who-we-are/who-we-are.js"></script>
 <script src="who-we-are/who-we-are-controller.js"></script>
-<script src="who-we-are/iswhoweare-directive.js"></script>
 
 <script src="components/backend/backend.js"></script>
 <script src="components/backend/contributor-service.js"></script>
