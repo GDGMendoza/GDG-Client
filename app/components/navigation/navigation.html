@@ -1,0 +1,21 @@
+<header class="row" scroll-aware-header>
+    <div class="small-12 large-9 columns large-centered">
+        <div class="row">
+            <div class="small-6 columns">
+                <img class="header-image" src="img/logo.png" alt=""/>
+                <span class="header-text show-for-medium-up"><strong>GDG</strong> Mendoza</span>
+            </div>
+
+            <div class="small-6 columns navbar-toggle-container">
+                <div class="button navbar-toggle" ng-click="toggleMenu()"><i class="fa fa-bars"></i></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="perspective effect-airbnb">
+    <div id="main-container" ng-transclude container-perspective="!menu.visible"></div>
+    <nav class="outer-nav left vertical" vertical-align menu-perspective="menu.visible">
+        <a class="icon-home" ng-href="{{link.url}}" ng-click="hideMenu()" ng-repeat="link in links">{{link.name}}</a>
+    </nav>
+</div>

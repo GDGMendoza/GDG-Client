@@ -23,7 +23,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- endbuild -->
 
 </head>
@@ -44,7 +44,7 @@
                     <div class="row">
                         <div class="medium-1 columns" style="height:1px"></div>
                         <div class="medium-10 columns">
-                            <img class="footer-logo" src="images/logo-footer.png" alt="GDG Mendoza Logo"/>
+                            <img class="footer-logo" src="img/logo-footer.png" alt="GDG Mendoza Logo"/>
                         </div>
                     </div>
                 </div>
@@ -82,6 +82,7 @@
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
 
+<!--
 <script id="views/postView.html" type="text/ng-template">
     <div class="row separator">
         <img class="col-md-12 image-shadow fix-row-padding big-image" ng-src="http://localhost/{{postCtrl.currentPost.cover}}" alt="">
@@ -108,20 +109,21 @@
             <div class="row separator post-social-container">
                 <a class="pull-right gplus-icon gplus-icon-big"
                    href="{{ postCtrl.contributorList[postCtrl.currentPost.author].googlePlus }}">
-                    <img src="images/gplus.png" alt=""/>
+                    <img src="img/gplus.png" alt=""/>
                 </a>
                 <a class="pull-right fb-icon fb-icon-big"
                    href="{{ postCtrl.contributorList[postCtrl.currentPost.author].facebook }}">
-                    <img src="images/facebook.png" alt=""/>
+                    <img src="img/facebook.png" alt=""/>
                 </a>
                 <a class="pull-right tw-icon tw-icon-big"
                    href="{{ postCtrl.contributorList[postCtrl.currentPost.author].twitter }}">
-                    <img src="images/twitter.png" alt=""/>
+                    <img src="img/twitter.png" alt=""/>
                 </a>
             </div>
         </div>
     </div>
 </script>
+-->
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
@@ -141,28 +143,38 @@
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
+<script src="app.js"></script>
 
-<script src="scripts/controllers/HomeCtrl.js"></script>
-<script src="scripts/controllers/BlogCtrl.js"></script>
-<script src="scripts/controllers/PostCtrl.js"></script>
-<script src="scripts/controllers/WhoWeAreCtrl.js"></script>
+<script src="mainpage/mainpage-controller.js"></script>
 
-<script src="scripts/directives/iswhoweare.js"></script>
-<script src="scripts/directives/navigation.js"></script>
-<script src="scripts/directives/scrollAwareHeader.js"></script>
-<script src="scripts/directives/verticalAling.js"></script>
+<script src="blog/blog.js"></script>
+<script src="blog/list/post-list-controller.js"></script>
+<script src="blog/detail/post-detail-controller.js"></script>
 
-<script src="scripts/services/ContributorService.js"></script>
-<script src="scripts/services/EventService.js"></script>
-<script src="scripts/services/PostService.js"></script>
-<script src="scripts/services/SubscriptionService.js"></script>
+<script src="events/events.js"></script>
+<script src="events/list/event-list-controller.js"></script>
+<script src="events/detail/event-detail-controller.js"></script>
+
+<script src="who-we-are/who-we-are.js"></script>
+<script src="who-we-are/who-we-are-controller.js"></script>
+<script src="who-we-are/iswhoweare-directive.js"></script>
+
+<script src="components/backend/backend.js"></script>
+<script src="components/backend/contributor-service.js"></script>
+<script src="components/backend/event-service.js"></script>
+<script src="components/backend/post-service.js"></script>
+<script src="components/backend/subscription-service.js"></script>
+
+<!-- explotar estos componentes en sub elementos -->
+<script src="components/navigation/navigation.js"></script>
+<script src="components/scroll-aware-header/scrollAwareHeader.js"></script>
+<script src="components/vertical-align/verticalAling.js"></script>
 <!-- endbuild -->
 
 <script>
     if (typeof angular !== 'undefined') {
         angular.element(document).ready(function () {
-            angular.bootstrap(document, ['gdgsiteApp']);
+            angular.bootstrap(document, ['gdgApp']);
         });
     }
 </script>

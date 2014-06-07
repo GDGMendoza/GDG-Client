@@ -3,7 +3,7 @@
 describe('Directive: iswhoweare', function () {
 
   // load the directive's module
-  beforeEach(module('gdgsiteApp'));
+  beforeEach(module('gdgApp'));
 
   var element,
     scope;

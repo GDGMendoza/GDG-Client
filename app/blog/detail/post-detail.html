@@ -1,0 +1,38 @@
+<div class="row separator">
+    <img class="col-md-12 image-shadow fix-row-padding big-image" ng-src="http://localhost/{{postCtrl.currentPost.cover}}" alt="">
+</div>
+<div class="row big-post-foot">
+    <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+        <img class="image-shadow author-img"
+             ng-src="{{postCtrl.contributorList[postCtrl.currentPost.author].photo}}"
+             alt="Profile photo of {{postCtrl.contributorList[postCtrl.currentPost.author].name }}"/>
+        <h4 class="post-author"><a class="red red-hover" ng-href="#">{{postCtrl.contributorList[postCtrl.currentPost.author].name}}</a>
+        </h4>
+
+        <div class="tag-container-tiny">
+            <a class="label label-default tag-preview" ng-href="#" ng-repeat="tag in postCtrl.currentPost.tags">{{tag.name}}</a>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-12 big-post-container line-height">
+        <h1 class="dark-grey post-title">{{ postCtrl.currentPost.title }}</h1>
+        <a class="big-post-date light-grey light-grey-hover" ng-href="#">Date: {{postCtrl.currentPost.createdAt |
+            date:'yyyy-MM-dd'}} <span ng-if="postCtrl.currentPost.createdAt != postCtrl.currentPost.modifiedAt">(updated at {{postCtrl.currentPost.modifiedAt | date:'yyyy-MM-dd HH:mm'}})</span></a>
+
+        <p class="post-paragraph">{{postCtrl.currentPost.content}}</p>
+
+        <div class="row separator post-social-container">
+            <a class="pull-right gplus-icon gplus-icon-big"
+               href="{{ postCtrl.contributorList[postCtrl.currentPost.author].googlePlus }}">
+                <img src="img/gplus.png" alt=""/>
+            </a>
+            <a class="pull-right fb-icon fb-icon-big"
+               href="{{ postCtrl.contributorList[postCtrl.currentPost.author].facebook }}">
+                <img src="img/facebook.png" alt=""/>
+            </a>
+            <a class="pull-right tw-icon tw-icon-big"
+               href="{{ postCtrl.contributorList[postCtrl.currentPost.author].twitter }}">
+                <img src="img/twitter.png" alt=""/>
+            </a>
+        </div>
+    </div>
+</div>
